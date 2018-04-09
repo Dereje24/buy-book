@@ -1,0 +1,30 @@
+{
+  "name": "buy-book",
+  "version": "1.0.0",
+  "description": "## Link to wireframe  ### https://www.canva.com/design/DAC0cWttBsQ/cC8NySrcU6y7RpGCr2CQzg/edit?category=tACZCsvcXEk",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3",
+    "express-sessions": "^1.0.6",
+    "faker": "^4.1.0",
+    "mongoose": "^5.0.14",
+    "node": "^9.11.0",
+    "passport": "^0.4.0",
+    "passport-local-mongoose": "^5.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dereje24/buy-book.git"
+  },
+  "author": "Dereje Dilnesaw",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Dereje24/buy-book/issues"
+  },
+  "homepage": "https://github.com/Dereje24/buy-book#readme"
+}
