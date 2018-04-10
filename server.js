@@ -24,10 +24,15 @@ passport.deserializeUser(db.User.deserializeUser());
 // auth routes
 app.post('/signup', function signup(req,res) {
   console.log(`${req.body.username} ${req.body.password}`);
-  User.register(new User({ username: req.body.username }), req.body.password,
-    function (err, newUser) {
+  User.register(new User({ fullName: req.body.username }), ({email: req.body.email}), req.body.passwords,
+    function(err, newUser) {
       passport.authenticate('local')(req, res, function() {
         res.send(newUser);
       });
     }
-)});
+)
+});
+
+app.listen(process.env.PORT || 3000, function(){
+  console.log('server started');
+})
