@@ -32,5 +32,5 @@ module.exports = {
       err ? res.status(500).json({error: err.message}) :
       res.send(userUpdated);
     });
-  };
+  }
 }

@@ -7,10 +7,15 @@ var express = require('express'),
   //  session = require('express-session'),
     LocalStrategy = require('passport-local').Strategy;
 
+// DB
 var User = db.User;
+// import controllers
+var indexCtrl = require('./controllers/index');
 
+// static files
 app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.urlencoded({ extended: true })); // req.body
+
 
 // initialize passport
 app.use(passport.initialize());
@@ -34,7 +39,7 @@ app.post('/signup', function signup(req,res) {
 app.post('/login', passport.authenticate('local'), function(req, res){
   if(req.user){
   res.send(req.user);
-} else {res.send('NO NO NO')}
+} else {res.send('error')}
 });
 
 app.get('/logout', function(req, res){
@@ -42,8 +47,19 @@ app.get('/logout', function(req, res){
   res.send('logged out');
 })
 
+
+// CRUD FOR BOOK
+app.post('/api/books', indexCtrl.book.create);
+app.put('/api/books/:id', indexCtrl.book.update);
+app.get('/api/books', indexCtrl.book.show);
+//app.get('/api/books/id', indexCtrl.book.show);
+app.delete('/api/books/id', indexCtrl.book.destroy);
+
+
+
+
+
+
 app.listen(process.env.PORT || 3000, function(){
   console.log('server started');
 })
-
-// CRUD FOR BOOK
