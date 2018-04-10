@@ -45,8 +45,7 @@ app.post('/login', passport.authenticate('local'), function(req, res){
 app.get('/logout', function(req, res){
   req.logout();
   res.send('logged out');
-})
-  
+});
 
 // CRUD FOR BOOK
 app.post('/api/books', indexCtrl.book.create);
@@ -62,4 +61,4 @@ app.delete('/api/books/id', indexCtrl.book.destroy);
 
 app.listen(process.env.PORT || 3000, function(){
   console.log('server started');
-})
+});
