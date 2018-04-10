@@ -2,6 +2,7 @@ var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
 var CourseSchema = new Schema({
+  title: String,
   book: {
     type: Schema.Types.ObjectId,
     ref: 'Book'

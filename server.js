@@ -46,7 +46,7 @@ app.get('/logout', function(req, res){
   req.logout();
   res.send('logged out');
 })
-
+  
 
 // CRUD FOR BOOK
 app.post('/api/books', indexCtrl.book.create);
