@@ -3,14 +3,14 @@ var mongoose = require('mongoose'),
 
 var CourseSchema = new Schema({
   title: String,
-  book: {
+  books: [{
     type: Schema.Types.ObjectId,
     ref: 'Book'
-  },
-  school: {
-    type: Schema.Types.ObjectId,
-    ref: 'School'
-  }
+  }]
+  // school: {
+  //   type: Schema.Types.ObjectId,
+  //   ref: 'School'
+  // }
 })
 
 var Course = mongoose.model('Course', CourseSchema);
