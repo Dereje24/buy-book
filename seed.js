@@ -41,7 +41,7 @@ var schoolList = [
     name: 'Foothill College'
   },
   {
-    name: 'San Jose City College	'
+    name: 'San Jose City College'
   },
   {
     name: 'San Jose State University'
@@ -51,18 +51,55 @@ var schoolList = [
   }
 ];
 
-db.Course.remove({}, function(err){
-  err ? console.log(err) :
-  db.Course.create(courseList, function(err, success){
-    err ? console.log(err) :
-    console.log('created course', success);
-  });
-});
+db.School.remove({})
+  .then(db.Course.remove({})
+    .then(db.School.create({name: "USF"})
+      .then(newSchool => {
+        db.Course.create({title: "Tolerating others"})
+          .then( newCourse => {
+            newSchool.courses.push(newCourse);
+            newSchool
+              .save()
+              .then(happySchool => {
+                happySchool.populate('courses').then(succ => console.log(succ))
 
-db.School.remove({}, function(err){
-  err ? console.log(err) :
-  db.School.create(schoolList, function(err, success){
-    err ? console.log(err) :
-    console.log('created schools', success);
-  });
-});
+
+              })
+
+          })
+      })))
+
+//
+// db.Course.remove({}, function(err){
+//   err ? console.log(err) :
+//   db.Course.create(courseList, function(err, success){
+//     err ? console.log(err) :
+//     console.log('created course', success);
+//   });
+// });
+//
+// // db.School.remove({}, function(err){
+// //   err ? console.log(err) :
+// //   db.School.create(schoolList, function(err, success){
+// //     err ? console.log(err) :
+// //     console.log('created schools', success);
+// //   });
+// // });
+//
+// db.School.remove({}, function(err){
+//   //console.log('removed all schools');
+//   // db.School.create(schoolList, function(err, success){
+//   //   err ? console.log(err) :
+//   //   console.log('created schools', success);
+//   // });
+//   var title = courseList.title;
+//   console.log('title', title);
+//   db.Course.find({title: title}, function(err, foundCourse){
+//     console.log('foundCourse on line 77', foundCourse);
+//     err ? console.log(err) :
+//     db.School.course = foundCourse;
+//     console.log('foundCourse line 81', foundCourse);
+//
+//   })
+// });
+module.exports = {schoolList: schoolList};

@@ -6,6 +6,7 @@ var express = require('express'),
     passport = require('passport'),
   //  session = require('express-session'),
     LocalStrategy = require('passport-local').Strategy;
+  var school = require('./seed.js');
 
 // DB
 var User = db.User;
@@ -60,6 +61,12 @@ app.put('/api/books/:id', indexCtrl.book.update);
 app.get('/api/books', indexCtrl.book.show);
 //app.get('/api/books/id', indexCtrl.book.show);
 app.delete('/api/books/id', indexCtrl.book.destroy);
+
+// LIST ALL SCHOOLS
+app.get('/api/schools', function(req, res){
+  res.json(school);
+
+});
 
 
 
