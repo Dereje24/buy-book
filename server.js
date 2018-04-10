@@ -34,6 +34,9 @@ app.get('/', function(req, res){
   res.render('index');
 });
 // auth routes
+app.get('/signup', function (req, res){
+  res.render('signup')
+})
 app.post('/signup', function signup(req,res) {
   User.register(new User({ fullName: req.body.fullName, username: req.body.username }), req.body.password,
     function(err, newUser) {
@@ -45,7 +48,7 @@ app.post('/signup', function signup(req,res) {
 
 app.post('/login', passport.authenticate('local'), function(req, res){
   if(req.user){
-  res.send(req.user);
+  res.render('login');
 } else {res.send('error')}
 });
 
