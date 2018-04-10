@@ -5,7 +5,7 @@ var BookSchema = new Schema({
   title: String,
   edition: String,
   price: Number,
-  img: String
+  img: String,
   user: {
     type: Schema.Types.ObjectId,
     ref: 'User'
@@ -13,11 +13,7 @@ var BookSchema = new Schema({
   course: {
     type: Schema.Types.ObjectId,
     ref: 'Course'
-  },
-  cart: {
-    type: Schema.Types.ObjectId,
-    ref: 'Cart'
-  },
+  }
 })
 
 var Book = mongoose.model('Book', BookSchema);
