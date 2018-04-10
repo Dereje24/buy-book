@@ -11,7 +11,43 @@ var courseList = [
 
 var schoolList = [
   {
-    name: faker.name.title()
+    name: 'Academy of Art University'
+  },
+  {
+    name: 'Berkeley City College'
+  },
+  {
+    name: 'Butte College'
+  },
+  {
+    name: 'California College of the Arts'
+  },
+  {
+    name: 'California State University Chico'
+  },
+  {
+    name: 'California State University East Bay'
+  },
+  {
+    name: 'Chabot College'
+  },
+  {
+    name: 'City College of San Francisco'
+  },
+  {
+    name: 'De Anza College'
+  },
+  {
+    name: 'Foothill College'
+  },
+  {
+    name: 'San Jose City College	'
+  },
+  {
+    name: 'San Jose State University'
+  },
+  {
+    name: 'Santa Clara University'
   }
 ];
 
