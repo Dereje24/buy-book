@@ -13,30 +13,30 @@
 </head>
 <body>
   <div class="row">
-    <form class="col s12">
+    <form class="col s12" method="post" action="/signup">
       <div class="row">
         <div class="input-field col s6">
-          <input placeholder="First Name" id="first_name" type="text" class="validate">
+          <input placeholder="First Name" name="first_name" type="text" class="validate">
           <label for="first_name"></label>
         </div>
         <div class="input-field col s6">
-          <input id="last_name" type="text" class="validate" placeholder="Last Name">
+          <input name="last_name" type="text" class="validate" placeholder="Last Name">
           <label for="last_name"></label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s12">
-          <input id="email" type="email" class="validate" placeholder="Email">
+          <input name="username" type="email" class="validate" placeholder="Email">
           <label for="email"></label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s12">
-          <input id="password" type="password" class="validate" placeholder="password">
+          <input name="password" type="password" class="validate" placeholder="password">
           <label for="password"></label>
         </div>
       </div>
-      <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+      <button class="btn waves-effect waves-light" type="submit" name="action"><a href="/profile">Submit</a>
         <i class="material-icons right"></i>
       </button>
     </form>
