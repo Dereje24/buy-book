@@ -1,0 +1,34 @@
+section{
+  background-color: #d9d9d9;
+}
+#searchContainer{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 2em;
+  margin: 10px auto;
+}
+.search-selection{
+  justify-content: space-between;
+  background-color: #b3d9ff;
+  height: 85px;
+  width: 30%;
+  color: black;
+}
+select#slct1{
+  display: block;
+}
+h3{
+  color: black;
+  text-align: left;
+  font-size: 18px;
+  margin: 10px auto;
+  font-weight: 700;
+}
+button{
+  font-size: 50px;
+  background-color: #b3d9ff;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}

@@ -5,10 +5,12 @@
   <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
   <!-- custom styles -->
- <link rel="stylesheet" type="text/css" href="/styles/style.css">
+  <link rel="stylesheet" type="text/css" href="/styles/style.css">
+  <!-- jquery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
 
- <!-- jquery -->
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+ <!-- Compiled and minified JavaScript -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
 
  <!-- custom script -->
   <script type="text/javascript" src="/scripts/app.js"></script>
@@ -23,12 +25,58 @@
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li><a href="#">About</a></li>
         <li><a href="/signup">Sign Up</a></li>
-        <li><a href="badges.html">Sign In</a></li>
+        <li><a href="/login">Sign In</a></li>
       </ul>
     </div>
   </nav>
-  <section>
+    <div class="carousel">
+        <a class="carousel-item" href="#one!"><img src="http://www.creativindie.com/wp-content/uploads/2013/10/Enchantment-Book-Cover-Best-Seller1.jpg"></a>
+        <a class="carousel-item" href="#two!"><img src="http://mediacdnopen.cincopa.com/hpChampionAdventures11.tif?o=4&res=246&cdn=ec&p=y&pid=732151&ph4=ABKDAk_kZDgPhA"></a>
+        <a class="carousel-item" href="#three!"><img src="https://about.canva.com/wp-content/uploads/sites/3/2015/01/children_bookcover.png"></a>
+        <a class="carousel-item" href="#four!"><img src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/book-cover-flyer-template-6bd8f9188465e443a5e161a7d0b3cf33.jpg?ts=1456287935"></a>
+        <a class="carousel-item" href="#five!"><img src="https://marketplace.canva.com/MAB___U-clw/1/0/thumbnail_large/canva-yellow-lemon-children-book-cover-MAB___U-clw.jpg"></a>
+        <a class="carousel-item" href="#five!"><img src="https://marketplace.canva.com/MAB___U-clw/1/0/thumbnail_large/canva-yellow-lemon-children-book-cover-MAB___U-clw.jpg"></a>
+        <a class="carousel-item" href="#five!"><img src="https://marketplace.canva.com/MAB___U-clw/1/0/thumbnail_large/canva-yellow-lemon-children-book-cover-MAB___U-clw.jpg"></a>
+        <a class="carousel-item" href="#five!"><img src="https://spark.adobe.com/images/landing/examples/how-to-book-cover.jpg"></a>
+    </div>
+    <section>
+    <div id="searchContainer">
+          <div class="search-selection">
+            <h3>Select a School</h3>
+              <select id="slct1" name="slct1">
+                <option value="1">A</option>
+                <option value="2">B</option>
+                <option value="3">C</option>
+                <option value="4">D</option>
+                <option value="5">E</option>
+                <option value="6">F</option>
+              </select>
+          </div>
+          <div class="search-selection">
+            <h3>Select a Class</h3>
+              <select id="slct1" name="slct1">
+                <option value="1">A</option>
+                <option value="2">B</option>
+                <option value="3">C</option>
+                <option value="4">D</option>
+                <option value="5">E</option>
+                <option value="6">F</option>
+              </select>
+          </div>
+          <div class="search-selection">
+            <h3>Select a Book</h3>
+              <select id="slct1" name="slct1">
+                <option value="1">A</option>
+                <option value="2">B</option>
+                <option value="3">C</option>
+                <option value="4">D</option>
+                <option value="5">E</option>
+                <option value="6">F</option>
+        </select>
+    </div>
+  </div>
+    <button id="searchSubmit" type="submit" class="center-align"><a href='/profile'>Submit</a></button>
+    </section>
 
-  </section>
 </body>
 </html>

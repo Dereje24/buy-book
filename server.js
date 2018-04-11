@@ -36,9 +36,9 @@ app.get('/', function(req, res){
 // auth routes
 app.get('/signup', function (req, res){
   res.render('signup')
-})
+});
 app.post('/signup', function signup(req,res) {
-  User.register(new User({ fullName: req.body.fullName, username: req.body.username }), req.body.password,
+  User.register(new User({ firstName: req.body.firstName, lastName: req.body.lastName, username: req.body.username }), req.body.password,
     function(err, newUser) {
       passport.authenticate('local')(req, res, function() {
         res.send(newUser);
@@ -46,15 +46,20 @@ app.post('/signup', function signup(req,res) {
     }
 )});
 
+app.get('/login', function (req, res){
+  res.render('login')
+});
 app.post('/login', passport.authenticate('local'), function(req, res){
-  if(req.user){
-  res.render('login');
-} else {res.send('error')}
+  res.redirect('/profile')
+});
+
+app.get('/profile', function(req, res){
+  res.render('profile')
 });
 
 app.get('/logout', function(req, res){
   req.logout();
-  res.send('logged out');
+  res.redirect('/');
 });
 
 // CRUD FOR BOOK
