@@ -30,97 +30,51 @@
   </nav>
   <h1>Welcome</h1>
   <div class="bodyContainer">
-    <section>
-      <div class="bookContainer">
-        <div class="images">
-          <img src="https://99designs-blog.imgix.net/wp-content/uploads/2017/12/attachment_83090027.jpg?auto=format&q=60&fit=max&w=930">
-          <h5>Out of the Box</h5>
-          <h6>$12.99</h6>
-        </div>
-        <div class="images">
-          <img src="https://99designs-blog.imgix.net/wp-content/uploads/2017/12/attachment_83090027.jpg?auto=format&q=60&fit=max&w=930">
-          <h5>Out of the Box</h5>
-          <h6>$12.99</h6>
-        </div>
-        <div class="images">
-          <img src="https://99designs-blog.imgix.net/wp-content/uploads/2017/12/attachment_83090027.jpg?auto=format&q=60&fit=max&w=930">
-          <h5>Out of the Box</h5>
-          <h6>$12.99</h6>
-        </div>
-      </div>
-    </section>
-    <!-- <button type="button" name="button" class="postBook">Button</button> -->
-  <div class="modal">
-    <div class="modal-content">
-      <div id="searchContainer">
-            <div class="search-selection">
-              <h3>Select a School</h3>
-                <select id="schools" name="slct1">
-
-                </select>
+        <section>
+          <div class="bookContainer">
+            <div class="images">
+              <img src="https://99designs-blog.imgix.net/wp-content/uploads/2017/12/attachment_83090027.jpg?auto=format&q=60&fit=max&w=930">
+              <h5>Out of the Box</h5>
+              <h6>$12.99</h6>
             </div>
-            <div class="search-selection">
-              <h3>Select a Class</h3>
-                <select id="courses" name="slct1">
-
-                </select>
+            <div class="images">
+              <img src="https://99designs-blog.imgix.net/wp-content/uploads/2017/12/attachment_83090027.jpg?auto=format&q=60&fit=max&w=930">
+              <h5>Out of the Box</h5>
+              <h6>$12.99</h6>
             </div>
-            <div class="search-selection">
-              <h3>Select a Book</h3>
-                <select id="books" name="slct1">
-                  <option value="1">A</option>
-                  <option value="2">B</option>
-                  <option value="3">C</option>
-                  <option value="4">D</option>
-                  <option value="5">E</option>
-                  <option value="6">F</option>
-          </select>
+            <div class="images">
+              <img src="https://99designs-blog.imgix.net/wp-content/uploads/2017/12/attachment_83090027.jpg?auto=format&q=60&fit=max&w=930">
+              <h5>Out of the Box</h5>
+              <h6>$12.99</h6>
+            </div>
+          </div>
+        </section>
+        <!-- <button type="button" name="button" class="postBook">Button</button> -->
+      <div class="modal">
+        <div class="modal-content">
+          <div id="searchContainer">
+                <div class="search-selection">
+                  <h3>Select a School</h3>
+                    <select id="schools" name="slct1">
+
+                    </select>
+                </div>
+                <div class="search-selection">
+                  <h3>Select a Class</h3>
+                    <select id="courses" name="slct1">
+
+                    </select>
+                </div>
+        </div>
+          <form method="POST" action="/api/books">
+            <input type="text" name="title" value="" placeholder="Book Title" required>
+            <input type="text" name="edition" value="" placeholder="edition">
+            <input type="text" name="price" value="" placeholder="price">
+            <input type="text" name="img" value="" placeholder="image">
+            <button type="submit" name="Post" id="postBook">Post Book</button>
+          </form>
       </div>
-    </div>
-      <form method="POST" action="/api/books">
-        <input type="text" name="title" value="" placeholder="Book Title" required>
-        <input type="text" name="edition" value="" placeholder="edition">
-        <input type="text" name="price" value="" placeholder="price">
-        <input type="text" name="img" value="" placeholder="image">
-        <button type="submit" name="Post" id="postBook">Post Book</button>
-      </form>
+      </div>
   </div>
-  </div>
-  <!-- <section>
-  <div id="searchContainer">
-        <div class="search-selection">
-          <h3>Select a School</h3>
-            <select id="schools" name="slct1">
-
-            </select>
-        </div>
-        <div class="search-selection">
-          <h3>Select a Class</h3>
-            <select id="courses" name="slct1">
-
-            </select>
-        </div>
-        <div class="search-selection">
-          <h3>Select a Book</h3>
-            <select id="books" name="slct1">
-              <option value="1">A</option>
-              <option value="2">B</option>
-              <option value="3">C</option>
-              <option value="4">D</option>
-              <option value="5">E</option>
-              <option value="6">F</option>
-      </select>
-  </div>
-</div>
-  <button id="searchSubmit" type="submit" class="center-align"><a href='/profile'>Submit</a></button>
-  </section>
-  <form method="POST" action="/api/books">
-    <input type="text" name="title" value="" placeholder="Book Title" required>
-    <input type="text" name="edition" value="" placeholder="edition">
-    <input type="text" name="price" value="" placeholder="price">
-    <input type="text" name="img" value="" placeholder="image">
-    <button type="submit" name="Post" id="postBook">Post Book</button>
-  </form> -->
-</div>
 </body>
 </html>
