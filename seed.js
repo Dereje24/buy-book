@@ -135,16 +135,16 @@ db.Course.remove({},function(){
   console.log('removed');
   db.School.remove({},function(){
     console.log('removed school');
-    db.Course.create(courseList,function(err,courseCreated){
-      db.School.create(schoolList,function(err,created){
-        db.schoolCourse.remove({},function(){
-          for(let i=0;i<created.length;i++){
-            for(let j=0;j<courseCreated.length;j++){
+    db.Course.create(courseList, function(err, courseCreated){
+      db.School.create(schoolList, function(err, schoolCreated){
+        db.schoolCourse.remove({}, function(){
+          for(let i = 0 ; i < schoolCreated.length; i++){
+            for(let j = 0; j < courseCreated.length; j++){
               db.schoolCourse.create({
-                school:created[i],
+                school:schoolCreated[i],
                 course:courseCreated[j]
-              },function(a,b){
-                console.log(b);
+                  }, function(a, b){
+                    console.log(b);
               });
             }
           }

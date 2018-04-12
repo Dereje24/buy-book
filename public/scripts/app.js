@@ -17,20 +17,20 @@ $(document).ready(function(){
   $.ajax({
     url: 'http://localhost:3000/api/all',
     method: 'GET',
-    success:hundler,
+    success:handleSuccess,
     error: console.log('err')
   });
   $('#schools').on('change',function(){
     let school=$(this).val().toString();
-    hundler2(school)
+    handleSuccess2(school)
 })
 });
-function hundler(data){
+function handleSuccess(data){
   all=data.all;
   let selecter=$('#schools');
   let schools=Object.keys(data.all);
   schools.forEach(function(school){
-    
+
     selecter.append(`<option value="${school}"> ${school} </option>`)
 
   })
@@ -39,9 +39,9 @@ function hundler(data){
 
 
 }
-function hundler2(x){
+function handleSuccess2(x){
   let courses=$('#courses');
-  console.log(all[x]);
+  // console.log(all[x]);
   courses.empty();
   all[x].courses.forEach(function(course){
     console.log('aaaaa');
