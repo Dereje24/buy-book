@@ -55,6 +55,9 @@ var schoolList = [
   },
   {
     name: 'Santa Clara University'
+  },
+  {
+    name: 'University of California Davis'
   }
 ];
 
@@ -144,7 +147,7 @@ db.Course.remove({},function(){
                 school:schoolCreated[i],
                 course:courseCreated[j]
                   }, function(a, b){
-                    console.log(b);
+                  //  console.log(b);
               });
             }
           }
