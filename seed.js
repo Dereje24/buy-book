@@ -147,7 +147,7 @@ db.Course.remove({},function(){
                 school:schoolCreated[i],
                 course:courseCreated[j]
                   }, function(a, b){
-                    console.log(b);
+                  //  console.log(b);
               });
             }
           }

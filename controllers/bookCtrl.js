@@ -5,7 +5,7 @@ var Book = db.Book;
 module.exports = {
   create: function (req, res){
     var newBook = req.body;
-    console.log(newBook);
+    //console.log(newBook);
     Book.create(newBook, function (err, savedBook){
         err ? res.status(500).json({error: err.message}) :
         res.send(savedBook);

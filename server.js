@@ -4,7 +4,8 @@ var express = require('express'),
     mongoose = require('mongoose'),
     db = require('./models/index'),
     passport = require('passport'),
-  //  session = require('express-session'),
+    //session = require('express-session'),
+    router = express.Router(),
     LocalStrategy = require('passport-local').Strategy;
 
 // DB
@@ -35,17 +36,16 @@ app.get('/', function(req, res){
     res.render('index');
   })
 
-app.get('/api/all',function(req,res){
+app.get('/api/allSchoolCourse',function(req,res){
   let all={
 
   };
     db.schoolCourse.find().populate('school')
       .populate('course')
         .exec(function(err,found){
-        for(let i=0;i<found.length;i++){
-
-          let name= found[i].school.name;
-          console.log(name);
+        for(let i = 0; i < found.length; i++){
+          let name = found[i].school.name;
+          //console.log(name);
           if(all[name]){
             all[name].courses.push({course:found[i].course,id:found[i]._id});
           }else{
@@ -74,12 +74,21 @@ app.post('/signup', function signup(req,res) {
     }
 )});
 
+
 app.get('/login', function (req, res){
   res.render('login')
 });
 app.post('/login', passport.authenticate('local'), function(req, res){
   res.redirect('/profile')
 });
+function ensureAuthenticated(req, res, next) {
+  if (req.isAuthenticated()) {
+    console.log("User authenticated.");
+    return next(); }
+    res.redirect('/login');
+  }
+
+app.use('/', ensureAuthenticated);
 
 app.get('/profile', function(req, res){
   res.render('profile')
