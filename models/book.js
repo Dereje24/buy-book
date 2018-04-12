@@ -10,9 +10,9 @@ var BookSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'User'
   },
-  course: {
+  sc: {
     type: Schema.Types.ObjectId,
-    ref: 'Course'
+    ref: 'schoolCourse'
   }
 })
 

@@ -31,13 +31,36 @@ app.set('view engine', 'ejs');
 
 // HOME PAGE ROUTES
 app.get('/', function(req, res){
-  db.Course.findOne({},function(err,course){
-    db.schoolCourse.find({course:course}).populate('school').exec(function(err,found){
-      res.json(found);
-    })
+
+    res.render('index');
   })
 
-});
+app.get('/api/all',function(req,res){
+  let all={
+
+  };
+    db.schoolCourse.find().populate('school')
+      .populate('course')
+        .exec(function(err,found){
+        for(let i=0;i<found.length;i++){
+
+          let name= found[i].school.name;
+          console.log(name);
+          if(all[name]){
+            all[name].courses.push({course:found[i].course,id:found[i]._id});
+          }else{
+            all[name]={
+              courses:[{course:found[i].course,id:found[i]._id}]
+            }
+
+          }
+
+        }
+        res.status(200).json({all}) ;
+    })
+})
+
+
 // auth routes
 app.get('/signup', function (req, res){
   res.render('signup')

@@ -132,29 +132,24 @@ var schoolList = [
 //   })
 // });
 db.Course.remove({},function(){
-  console.log('remooved');
+  console.log('removed');
   db.School.remove({},function(){
-    console.log('remooved school');
+    console.log('removed school');
     db.Course.create(courseList,function(err,courseCreated){
       db.School.create(schoolList,function(err,created){
         db.schoolCourse.remove({},function(){
           for(let i=0;i<created.length;i++){
             for(let j=0;j<courseCreated.length;j++){
-
               db.schoolCourse.create({
                 school:created[i],
                 course:courseCreated[j]
               },function(a,b){
                 console.log(b);
               });
-
             }
-
           }
         })
-
-    })
-
+      })
     })
   })
 })
