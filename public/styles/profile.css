@@ -1,0 +1,29 @@
+img{
+  height: 200px;
+  width: 200px;
+}
+section{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  background-color: #d9d9d9;
+  padding: 2em;
+  width: 800px;
+  height: auto;
+}
+.images{
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 30px;
+}
+.bookContainer{
+  display: flex;
+}
+.addBook{
+  display: flex;
+  flex-direction: column;
+    padding: 10px;
+}
+.bodyContainer{
+  display: flex;
+}

@@ -2,14 +2,14 @@ var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
 var schoolCourseSchema = new Schema ({
-  school: [{
+  school: {
     type: Schema.Types.ObjectId,
     ref: 'School'
-  }];
-  course: [{
+  },
+  course: {
     type: Schema.Types.ObjectId,
     ref: 'Course'
-  }];
+  }
 });
 
 var schoolCourse = mongoose.model('schoolCourse', schoolCourseSchema);
