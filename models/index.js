@@ -3,6 +3,7 @@ var mongoose = require('mongoose'),
     Course = require('./course'),
     School = require('./school'),
     User = require('./user');
+    schoolCourse=require('./school-course');
 
 mongoose.connect('mongodb://localhost/buy-book');
 
@@ -10,5 +11,6 @@ module.exports = {
   Book: Book,
   Course: Course,
   School: School,
-  User: User
+  User: User,
+  schoolCourse: schoolCourse
 };

@@ -6,7 +6,6 @@ var express = require('express'),
     passport = require('passport'),
   //  session = require('express-session'),
     LocalStrategy = require('passport-local').Strategy;
-  var school = require('./seed.js');
 
 // DB
 var User = db.User;
@@ -32,7 +31,12 @@ app.set('view engine', 'ejs');
 
 // HOME PAGE ROUTES
 app.get('/', function(req, res){
-  res.render('index');
+  db.Course.findOne({},function(err,course){
+    db.schoolCourse.find({course:course}).populate('school').exec(function(err,found){
+      res.json(found);
+    })
+  })
+
 });
 // auth routes
 app.get('/signup', function (req, res){
