@@ -27,10 +27,10 @@ section{
 .bodyContainer{
   display: flex;
 }
-.modal{
+.modalContainer{
   padding: 100px;
   background-color: rgba(211, 211, 211, .3);
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   position: fixed;
@@ -44,4 +44,11 @@ section{
   color: #444;
   width: 60%;
   background-color: white;
+}
+.modalopen{
+  display: flex;
+}
+.brand-logo{
+  height: 50px;
+  width: auto;
 }
