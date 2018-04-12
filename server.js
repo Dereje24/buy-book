@@ -78,14 +78,14 @@ app.get('/login', function (req, res){
 app.post('/login', passport.authenticate('local'), function(req, res){
   res.redirect('/profile')
 });
-function ensureAuthenticated(req, res, next) {
-  if (req.isAuthenticated()) {
-    console.log("User authenticated.");
-    return next(); }
-    res.redirect('/login');
-  }
-
-app.use('/', ensureAuthenticated);
+// function ensureAuthenticated(req, res, next) {
+//   if (req.isAuthenticated()) {
+//     console.log("User authenticated.");
+//     return next(); }
+//     res.redirect('/login');
+//   }
+//
+// app.use('/', ensureAuthenticated);
 
 app.get('/profile', function(req, res){
   res.render('profile', {user: req.user})
@@ -106,8 +106,11 @@ app.delete('/api/books/id', indexCtrl.book.destroy);
 // LIST ALL SCHOOLS
 app.get('/api/schools', function(req, res){
   res.json(school);
-
 });
+// CHECK OUT
+app.get('/checkout', function(req, res){
+  res.render('checkout', {user: req.user});
+})
 
 
 
