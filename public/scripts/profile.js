@@ -1,18 +1,17 @@
 $(document).ready(function(){
-  $('.modalButton').on('click', function(){
-    $('.modal').css('display', 'block');
-  })
+  $('.btn').on('click', function(e){
+    $('.modalContainer').addClass('modalopen');
+  });
+
   $('#postBook').on('submit', function(e) {
     e.preventDefault();
     window.location = '/profile';
-  })
+  });
 
   $.ajax({
-<<<<<<< HEAD
+
     url: '/api/allSchoolCourse',
-=======
-    url: 'https://buy-it-here.herokuapp.com/api/allSchoolCourse',
->>>>>>> 15935f3a89a85d9e3c943b209f5709162975a386
+
     method: 'GET',
     success:handleSuccess,
     error: console.log('err')
@@ -41,7 +40,3 @@ function handleSuccess2(x){
   })
   courses.formSelect();
 }
-
-
-
-});

@@ -33,7 +33,7 @@ app.set('view engine', 'ejs');
 // HOME PAGE ROUTES
 app.get('/', function(req, res){
 
-    res.render('index');
+    res.render('index', {user: req.user});
   })
 
 app.get('/api/allSchoolCourse',function(req,res){
@@ -52,14 +52,11 @@ app.get('/api/allSchoolCourse',function(req,res){
             all[name]={
               courses:[{course:found[i].course,id:found[i]._id}]
             }
-
           }
-
         }
         res.status(200).json({all}) ;
     })
 })
-
 
 // auth routes
 app.get('/signup', function (req, res){
@@ -76,22 +73,22 @@ app.post('/signup', function signup(req,res) {
 
 
 app.get('/login', function (req, res){
-  res.render('login')
+  res.render('login', {user: req.user})
 });
 app.post('/login', passport.authenticate('local'), function(req, res){
   res.redirect('/profile')
 });
-function ensureAuthenticated(req, res, next) {
-  if (req.isAuthenticated()) {
-    console.log("User authenticated.");
-    return next(); }
-    res.redirect('/login');
-  }
-
-app.use('/', ensureAuthenticated);
+// function ensureAuthenticated(req, res, next) {
+//   if (req.isAuthenticated()) {
+//     console.log("User authenticated.");
+//     return next(); }
+//     res.redirect('/login');
+//   }
+//
+// app.use('/', ensureAuthenticated);
 
 app.get('/profile', function(req, res){
-  res.render('profile')
+  res.render('profile', {user: req.user})
 });
 
 app.get('/logout', function(req, res){
@@ -109,8 +106,11 @@ app.delete('/api/books/id', indexCtrl.book.destroy);
 // LIST ALL SCHOOLS
 app.get('/api/schools', function(req, res){
   res.json(school);
-
 });
+// CHECK OUT
+app.get('/checkout', function(req, res){
+  res.render('checkout', {user: req.user});
+})
 
 
 

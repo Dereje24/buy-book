@@ -8,7 +8,7 @@ module.exports = {
     //console.log(newBook);
     Book.create(newBook, function (err, savedBook){
         err ? res.status(500).json({error: err.message}) :
-        res.send(savedBook);
+        res.redirect('/profile');
 
     });
   },

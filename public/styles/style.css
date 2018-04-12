@@ -29,3 +29,9 @@ button{
   display: flex;
   justify-content: center;
 }
+.brand-logo{
+  height: 50px;
+}
+nav{
+  background: #85E0F7;
+}
