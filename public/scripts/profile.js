@@ -9,7 +9,9 @@ $(document).ready(function(){
   });
 
   $.ajax({
+
     url: '/api/allSchoolCourse',
+
     method: 'GET',
     success:handleSuccess,
     error: console.log('err')
