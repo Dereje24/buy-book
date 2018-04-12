@@ -3,9 +3,10 @@ var mongoose = require('mongoose'),
     Course = require('./course'),
     School = require('./school'),
     User = require('./user');
-    schoolCourse=require('./school-course');
+    schoolCourse=require('./school-course'),
+    dbUrl = process.env.MONGODB_URI || 'mongodb://localhost/buy-book';
 
-mongoose.connect('mongodb://localhost/buy-book');
+mongoose.connect(dbUrl, {promiseLibrary: global.Promise});
 
 module.exports = {
   Book: Book,
