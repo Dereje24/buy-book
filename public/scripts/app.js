@@ -12,11 +12,7 @@ $(document).ready(function(){
   });
 
   $.ajax({
-<<<<<<< HEAD
-    url: 'api/allSchoolCourse',
-=======
     url: 'https://buy-it-here.herokuapp.com/api/allSchoolCourse',
->>>>>>> 15935f3a89a85d9e3c943b209f5709162975a386
     method: 'GET',
     success:handleSuccess,
     error: console.log('err')
