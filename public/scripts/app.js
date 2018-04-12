@@ -12,7 +12,7 @@ $(document).ready(function(){
   });
 
   $.ajax({
-    url: 'http://localhost:3000/api/allSchoolCourse',
+    url: '/api/allSchoolCourse',
     method: 'GET',
     success:handleSuccess,
     error: console.log('err')
