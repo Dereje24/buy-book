@@ -3,7 +3,10 @@ $(document).ready(function(){
       var bookForm = document.createElement('form')
   });
 
-
+  $('.postBook').on('click', function(e){
+    e.preventDefault();
+    form.empty();
+  });
 
 
 

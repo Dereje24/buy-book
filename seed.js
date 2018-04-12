@@ -55,6 +55,9 @@ var schoolList = [
   },
   {
     name: 'Santa Clara University'
+  },
+  {
+    name: 'University of California Davis'
   }
 ];
 

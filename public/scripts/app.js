@@ -1,6 +1,3 @@
-
-
-
 $(document).ready(function(){
   let all;
   $('.carousel').carousel();
