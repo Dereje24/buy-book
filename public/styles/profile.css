@@ -10,6 +10,7 @@ section{
   padding: 2em;
   width: 800px;
   height: auto;
+  margin: 0 5%;
 }
 .images{
   flex-direction: row;
@@ -51,4 +52,7 @@ section{
 .brand-logo{
   height: 50px;
   width: auto;
+}
+input{
+  margin: 0 auto;
 }

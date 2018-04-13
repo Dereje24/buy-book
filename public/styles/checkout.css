@@ -10,6 +10,7 @@ section{
   padding: 2em;
   width: 800px;
   height: auto;
+  margin: 0 5%;
 }
 .images{
   flex-direction: row;
@@ -28,4 +29,29 @@ aside{
 }
 .add{
   font-size: 300%;
+}
+button{
+  display: flex;
+  margin: 0 auto;
+}
+.modalContainer{
+  padding: 100px;
+  background-color: rgba(211, 211, 211, .3);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.modal-content{
+  padding: 40px 20px;
+  color: #444;
+  width: 60%;
+  background-color: white;
+}
+.modalopen{
+  display: flex;
 }

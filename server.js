@@ -4,6 +4,7 @@ var express = require('express'),
     mongoose = require('mongoose'),
     db = require('./models/index'),
     passport = require('passport'),
+    flash = require('flash-express'),
     //session = require('express-session'),
     router = express.Router(),
     LocalStrategy = require('passport-local').Strategy;
@@ -21,6 +22,9 @@ app.use(bodyParser.urlencoded({ extended: true })); // req.body
 // initialize passport
 app.use(passport.initialize());
 app.use(passport.session());
+
+//FLASH
+app.use(flash());
 
 // passport config
 passport.use(new LocalStrategy(db.User.authenticate()));
@@ -71,11 +75,15 @@ app.post('/signup', function signup(req,res) {
     }
 )});
 
-
 app.get('/login', function (req, res){
   res.render('login', {user: req.user})
 });
 app.post('/login', passport.authenticate('local'), function(req, res){
+  let option={
+    position: 't',
+    duration: '2000'
+  };
+  res.flash('logged in')
   res.redirect('/profile')
 });
 // function ensureAuthenticated(req, res, next) {
