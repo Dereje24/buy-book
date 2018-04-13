@@ -30,8 +30,14 @@ button{
   justify-content: center;
 }
 .brand-logo{
-  height: 50px;
+  height: 63px;
 }
 nav{
   background: #85E0F7;
+}
+ul li a{
+  font-size: 25px;
+}
+.page-footer{
+  background-color: #85E0F7;
 }

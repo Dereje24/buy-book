@@ -47,11 +47,22 @@
               <h5>Out of the Box</h5>
               <h6>$12.99</h6>
             </div>
+            <% for(let book of books) { %>
+              <div class="images">
+                <img src="<% book.img %>">
+                <h5><%= book.title %></h5>
+                <h6>$<%= book.price %></h6>
+              </div>
+            <% } %>
           </div>
         </section>
+        <div class="bookPopulate">
+
+        </div>
       <input type="submit" class="btn" value="+">
       <div class="modalContainer">
         <div class="modal-content">
+
           <div id="searchContainer">
                 <div class="search-selection">
                   <h3>Select a School</h3>
@@ -61,12 +72,13 @@
                 </div>
                 <div class="search-selection">
                   <h3>Select a Class</h3>
-                    <select id="courses" name="slct1">
+                    <form method="POST" action="/api/books">
+                    <select id="courses" name="schoolCourse">
 
                     </select>
                 </div>
         </div>
-          <form method="POST" action="/api/books">
+
             <input type="text" name="title" value="" placeholder="Book Title" required>
             <input type="text" name="edition" value="" placeholder="edition">
             <input type="text" name="price" value="" placeholder="price">
@@ -78,6 +90,6 @@
   </div>
   <button type="submit" name="button"><a href='/checkout'>CHECK OUT</a></button>
   <!-- FLASH  -->
-  <script type="text/javascript" src="flash/flash-client.js"></script> 
+  <script type="text/javascript" src="flash/flash-client.js"></script>
 </body>
 </html>

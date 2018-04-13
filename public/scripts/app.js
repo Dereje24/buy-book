@@ -31,11 +31,11 @@ function handleSuccess(data){
   })
   $('select').formSelect();
 }
-function handleSuccess2(x){
+function handleSuccess2(cors){
   let courses=$('#courses');
   // console.log(all[x]);
   courses.empty();
-  all[x].courses.forEach(function(course){
+  all[cors].courses.forEach(function(course){
     //console.log(course.course);
     courses.append(`<option value="${course.id}"> ${course.course.title} </option>`)
   })

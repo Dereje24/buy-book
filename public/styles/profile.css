@@ -56,3 +56,12 @@ section{
 input{
   margin: 0 auto;
 }
+nav{
+  background-color: #85E0F7;
+}
+.brand-logo{
+  height: 63px;
+}
+ul li a{
+  font-size: 25px;
+}
