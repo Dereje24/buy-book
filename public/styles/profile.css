@@ -1,3 +1,9 @@
+body{
+  background-image: url('https://images.unsplash.com/photo-1516979187457-637abb4f9353?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=0c4b5fcc53abd6158286dc86a9be4bee&auto=format&fit=crop&w=1050&q=80');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
 img{
   height: 200px;
   width: 200px;
@@ -6,7 +12,7 @@ section{
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  background-color: #d9d9d9;
+  background: linear-gradient(to bottom, #d9d9d9, #85E0F7);
   padding: 2em;
   width: 800px;
   height: auto;
@@ -16,6 +22,10 @@ section{
   flex-direction: row;
   justify-content: space-between;
   margin: 30px;
+  padding: 2%;
+}
+.images img{
+  width: 100%;
 }
 .bookContainer{
   display: flex;
@@ -53,15 +63,32 @@ section{
   height: 50px;
   width: auto;
 }
+.co{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background: linear-gradient(#d9d9d9, #85E0F7);
+  padding: 2%;
+}
+.co button{
+  width: 50%;
+  margin: 0 auto;
+}
+.co h3{
+  color: white;
+}
 input{
   margin: 0 auto;
 }
 nav{
-  background-color: #85E0F7;
+  background: linear-gradient(to right, #d9d9d9, #85E0F7);
 }
 .brand-logo{
   height: 63px;
 }
 ul li a{
   font-size: 25px;
+}
+h1{
+  text-align: center;
 }

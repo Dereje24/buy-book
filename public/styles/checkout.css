@@ -1,3 +1,9 @@
+body{
+  background: url("https://images.unsplash.com/photo-1481007553706-bde1ba8e91fd?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=caec8d3a7e2fbd72ff14891daf9df3d1&auto=format&fit=crop&w=1050&q=80");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
 img{
   height: 200px;
   width: 200px;
@@ -10,7 +16,23 @@ section{
   padding: 2em;
   width: 800px;
   height: auto;
-  margin: 0 5%;
+  margin: 10% 5%;
+}
+nav{
+  background: linear-gradient(to right, #d9d9d9, #85E0F7);
+}
+ul li a{
+  font-size: 25px;
+}
+aside{
+  margin-left: 15%;
+}
+button{
+  display: flex;
+  margin: 0 auto;
+}
+a{
+  color: black;
 }
 .images{
   flex-direction: row;
@@ -24,15 +46,8 @@ section{
   display: flex;
   flex-direction: row;
 }
-aside{
-  margin-left: 15%;
-}
 .add{
   font-size: 300%;
-}
-button{
-  display: flex;
-  margin: 0 auto;
 }
 .modalContainer{
   padding: 100px;
@@ -57,10 +72,4 @@ button{
 }
 .brand-logo{
   height: 63px;
-}
-nav{
-  background: #85E0F7;
-}
-ul li a{
-  font-size: 25px;
 }

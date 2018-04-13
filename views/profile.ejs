@@ -32,23 +32,18 @@
   <div class="bodyContainer">
         <section>
           <div class="bookContainer">
-            <div class="images">
+            <div class="images blue-grey lighten-2">
               <img src="https://99designs-blog.imgix.net/wp-content/uploads/2017/12/attachment_83090027.jpg?auto=format&q=60&fit=max&w=930">
               <h5>Out of the Box</h5>
               <h6>$12.99</h6>
             </div>
-            <div class="images">
-              <img src="https://99designs-blog.imgix.net/wp-content/uploads/2017/12/attachment_83090027.jpg?auto=format&q=60&fit=max&w=930">
-              <h5>Out of the Box</h5>
-              <h6>$12.99</h6>
-            </div>
-            <div class="images">
+            <div class="images blue-grey lighten-2">
               <img src="https://99designs-blog.imgix.net/wp-content/uploads/2017/12/attachment_83090027.jpg?auto=format&q=60&fit=max&w=930">
               <h5>Out of the Box</h5>
               <h6>$12.99</h6>
             </div>
             <% for(let book of books) { %>
-              <div class="images">
+              <div class="images blue-grey lighten-2">
                 <img src="<% book.img %>">
                 <h5><%= book.title %></h5>
                 <h6>$<%= book.price %></h6>
@@ -59,10 +54,14 @@
         <div class="bookPopulate">
 
         </div>
+      <div class="co">
+      <h3>Create a Book</h3>
       <input type="submit" class="btn" value="+">
+      <button type="submit" name="button"><a href='/checkout'>CHECK OUT</a></button>
+    </div>
       <div class="modalContainer">
         <div class="modal-content">
-
+            <button type="submit" name="button" id="xClose">X</button>
           <div id="searchContainer">
                 <div class="search-selection">
                   <h3>Select a School</h3>
@@ -88,7 +87,7 @@
       </div>
       </div>
   </div>
-  <button type="submit" name="button"><a href='/checkout'>CHECK OUT</a></button>
+
   <!-- FLASH  -->
   <script type="text/javascript" src="flash/flash-client.js"></script>
 </body>

@@ -1,6 +1,8 @@
 $(document).ready(function(){
   let all;
-  $('.carousel').carousel();
+  $('.carousel').carousel({
+    padding: 200
+  });
 
   $('#searchSubmit').on('click', function(e){
     e.preventDefault();

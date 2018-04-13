@@ -2,6 +2,9 @@ $(document).ready(function(){
   $('.btn').on('click', function(e){
     $('.modalContainer').addClass('modalopen');
   });
+  $('#xClose').on('click', function(e) {
+      $('.modalContainer').removeClass('modalopen')
+  })
 
   $('#postBook').on('submit', function(e) {
     e.preventDefault();
@@ -38,13 +41,3 @@ function handleSuccess2(sc){
   })
   courses.formSelect();
 }
-// $.ajax({
-//   url: '/api/books',
-//   method: 'GET',
-//   success: succ,
-//   err: console.log(err);
-// })
-// function succ(bookList){
-//   let bookSelect = $('.bookPopulate');
-//   let books =
-// }
