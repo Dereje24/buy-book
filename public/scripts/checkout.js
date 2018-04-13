@@ -11,5 +11,8 @@ $(document).ready(function () {
   $('#ch').on('click', function(e){
     $('.modalContainer').addClass('modalopen');
   });
+  $('#xClose').on('click', function(e) {
+      $('.modalContainer').removeClass('modalopen')
+  })
 
 })
