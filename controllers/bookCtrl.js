@@ -5,10 +5,14 @@ var Book = db.Book;
 module.exports = {
   create: function (req, res){
     var newBook = req.body;
+    console.log(req.body);
+    newBook.user=req.user;
+    console.log(newBook);
     //console.log(newBook);
-    Book.create(newBook, function (err, savedBook){
+    Book.create({title:req.body.title,user:req.user,schoolCourse:req.body.schoolCourse,edition:req.body.edition,price:req.body.price
+      ,img:req.body.img}, function (err, savedBook){
         err ? res.status(500).json({error: err.message}) :
-        res.redirect('/profile');
+        res.redirect('/profile'); 
 
     });
   },

@@ -9,9 +9,7 @@ $(document).ready(function(){
   });
 
   $.ajax({
-
     url: '/api/allSchoolCourse',
-
     method: 'GET',
     success:handleSuccess,
     error: console.log('err')
@@ -30,13 +28,23 @@ function handleSuccess(data){
   })
   $('select').formSelect();
 }
-function handleSuccess2(x){
+function handleSuccess2(sc){
   let courses=$('#courses');
   // console.log(all[x]);
   courses.empty();
-  all[x].courses.forEach(function(course){
+  all[sc].courses.forEach(function(course){
     //console.log(course.course);
     courses.append(`<option value="${course.id}"> ${course.course.title} </option>`)
   })
   courses.formSelect();
 }
+// $.ajax({
+//   url: '/api/books',
+//   method: 'GET',
+//   success: succ,
+//   err: console.log(err);
+// })
+// function succ(bookList){
+//   let bookSelect = $('.bookPopulate');
+//   let books =
+// }

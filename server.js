@@ -5,7 +5,7 @@ var express = require('express'),
     db = require('./models/index'),
     passport = require('passport'),
     flash = require('flash-express'),
-    //session = require('express-session'),
+    session = require('express-session'),
     router = express.Router(),
     LocalStrategy = require('passport-local').Strategy;
 
@@ -17,7 +17,11 @@ var indexCtrl = require('./controllers/index');
 // static files
 app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.urlencoded({ extended: true })); // req.body
-
+app.use(session({
+  secret: 'dj', // secret password
+  resave: false,
+  saveUninitialized: false
+}));
 
 // initialize passport
 app.use(passport.initialize());
@@ -96,7 +100,14 @@ app.post('/login', passport.authenticate('local'), function(req, res){
 // app.use('/', ensureAuthenticated);
 
 app.get('/profile', function(req, res){
-  res.render('profile', {user: req.user})
+  if(!req.user)
+  res.redirect('/');
+  else{
+    db.Book.find({user:req.user},function(err,books){
+      res.render('profile', {user: req.user,books:books})
+
+    })
+}
 });
 
 app.get('/logout', function(req, res){
